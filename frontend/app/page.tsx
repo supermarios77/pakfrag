@@ -19,7 +19,7 @@ export default function Home() {
 						<div className="text-center">
 							<a className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl light:from-emerald-700 light:to-emerald-600 from-emerald-800 to-emerald-900 shadow-lg shadow-transparent hover:shadow-green-900/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-green-800 focus:ring-offset-2 focus:ring-offset-white py-3 px-6" href="#">
 								View Products
-								<svg className="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+								<svg className="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" ><path d="m9 18 6-6-6-6" /></svg>
 							</a>
 						</div>
 					</div>
