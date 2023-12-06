@@ -35,27 +35,10 @@ import Image from "next/image";
 
 import useSound from 'use-sound';
 import soundFile from '../audio/click.mp3';
-import typingSound from '../audio/typing.mp3';
 
 export const Navbar = () => {
 
 	const [play] = useSound(soundFile);
-	const [isTyping, setIsTyping] = useState(false);
-
-	const [playTyping, { stop }] = useSound(typingSound, { volume: 0.5 }); // Adjust volume as needed
-  
-	useEffect(() => {
-	  if (isTyping) {
-		playTyping();
-	  } else {
-		// Stop the typing sound after a delay when typing stops
-		const delay = setTimeout(() => {
-		  stop();
-		}, 500); // Adjust the delay duration as needed
-  
-		return () => clearTimeout(delay);
-	  }
-	}, [isTyping, playTyping, stop]);
   
 
 
@@ -77,11 +60,6 @@ export const Navbar = () => {
 			<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
 		  }
 		  type="search"
-		  onChange={(e) => {
-			playTyping(); // Trigger typing sound on each keypress
-			setIsTyping(true);
-		  }}
-		  onBlur={() => setIsTyping(false)}
 		/>
 	  );	  
 
