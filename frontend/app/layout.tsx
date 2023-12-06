@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import Home from "./page";
 
 export const metadata: Metadata = {
 	title: 'PakFrag',
@@ -36,8 +37,9 @@ export default function RootLayout({
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
+					<div className="">
 						<Navbar />
+						<Home />
 					</div>
 				</Providers>
 			</body>
