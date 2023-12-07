@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react";
+import React from "react";
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -10,7 +10,6 @@ import {
 	NavbarItem,
 	NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
@@ -23,12 +22,10 @@ import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-	TwitterIcon,
-	GithubIcon,
-	DiscordIcon,
-	HeartFilledIcon,
 	SearchIcon,
 } from "@/components/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "/public/logo.png";
 import Image from "next/image";
@@ -39,29 +36,29 @@ import soundFile from '../audio/click.mp3';
 export const Navbar = () => {
 
 	const [play] = useSound(soundFile);
-  
+
 
 
 	const searchInput = (
 		<Input
-		  aria-label="Search"
-		  classNames={{
-			inputWrapper: "bg-default-100",
-			input: "text-sm",
-		  }}
-		  endContent={
-			<Kbd className="hidden lg:inline-block" keys={["command"]}>
-			  K
-			</Kbd>
-		  }
-		  labelPlacement="outside"
-		  placeholder="Search..."
-		  startContent={
-			<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-		  }
-		  type="search"
+			aria-label="Search"
+			classNames={{
+				inputWrapper: "bg-default-100",
+				input: "text-sm",
+			}}
+			endContent={
+				<Kbd className="hidden lg:inline-block" keys={["command"]}>
+					K
+				</Kbd>
+			}
+			labelPlacement="outside"
+			placeholder="Search..."
+			startContent={
+				<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
+			}
+			type="search"
 		/>
-	  );	  
+	);
 
 
 
@@ -97,36 +94,19 @@ export const Navbar = () => {
 				justify="end"
 			>
 				<NavbarItem className="hidden sm:flex gap-2">
-					<Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
-						<TwitterIcon className="text-default-500" />
-					</Link>
-					<Link isExternal href={siteConfig.links.discord} aria-label="Discord">
-						<DiscordIcon className="text-default-500" />
-					</Link>
-					<Link isExternal href={siteConfig.links.github} aria-label="Github">
-						<GithubIcon className="text-default-500" />
-					</Link>
 					<ThemeSwitch />
 				</NavbarItem>
-				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-				<NavbarItem className="hidden md:flex">
-					<Button
-						isExternal
-						as={Link}
-						className="text-sm font-normal text-default-600 bg-default-100"
-						href={siteConfig.links.sponsor}
-						startContent={<HeartFilledIcon className="text-danger" />}
-						variant="flat"
-						onClick={() => play()} 
-					>
-						Sponsor
-					</Button>
+				<NavbarItem className="hidden sm:flex gap-2">
+				<Link isExternal href={siteConfig.links.facebook} aria-label="Facebook">
+					<FontAwesomeIcon icon={faFacebook} style={{ color: 'grey' }} />
+				</Link>
 				</NavbarItem>
+				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
 			</NavbarContent>
 
 			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<Link isExternal href={siteConfig.links.github} aria-label="Github">
-					<GithubIcon className="text-default-500" />
+				<Link isExternal href={siteConfig.links.facebook} aria-label="Facebook">
+					<FontAwesomeIcon icon={faFacebook} style={{ color: 'grey' }} />
 				</Link>
 				<ThemeSwitch />
 				<NavbarMenuToggle />
