@@ -1,9 +1,10 @@
+import Cards from "@/components/Cards";
 import React from "react";
 
 export default function Home() {
 	return (
-		<section className="">
-			<div className="bg-green-950 ">
+		<section className="flex justify-center flex-col gap-10 align-middle content-center items-center">
+			<div className="bg-green-950 hero">
 				<div className="bg-gradient-to-b from-green-800/[.15] via-transparent">
 					<div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
 						<div className="max-w-3xl text-center mx-auto">
@@ -25,6 +26,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+			<Cards />
 		</section>
 	);
 }
