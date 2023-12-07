@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-	description: "Make beautiful websites regardless of your design experience.",
+	description: "The premium Pakistani fragrance community.",
 	navItems: [
 		{
 			label: "Home",
