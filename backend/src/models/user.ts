@@ -4,7 +4,6 @@ import {
 } from "@medusajs/medusa"
 import { Store } from "./store";
 
-
 @Entity()
 export class User extends MedusaUser {
   @Index("UserStoreId")
